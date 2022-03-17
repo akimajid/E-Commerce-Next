@@ -4,16 +4,18 @@ import { Provider } from 'react-redux'
 import store from '../redux/store'
 import NetworkMessageWrapper from '../component/NetworkMessageWrapper'
 import AuthProvider from '../component/AuthProvider'
+import Navbar from '../component/Navbar'
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <ChakraProvider>
-        <AuthProvider>
-          <NetworkMessageWrapper>
+        <NetworkMessageWrapper>
+          <AuthProvider>
+            <Navbar />
             <Component {...pageProps} />
-          </NetworkMessageWrapper>
-        </AuthProvider>
+          </AuthProvider>
+        </NetworkMessageWrapper>
       </ChakraProvider>
     </Provider>
   )
